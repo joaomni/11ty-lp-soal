@@ -161,7 +161,7 @@
 								>
 									<span
 										tabindex="0"
-										class="sm:text-base text-sm font-light focus:font-bold"
+										class="sm:text-base text-sm font-medium focus:font-bold"
 										>Minimalistas</span
 									>
 									<div
@@ -198,7 +198,7 @@
 								>
 									<span
 										tabindex="0"
-										class="sm:text-base text-sm font-light focus:font-bold"
+										class="sm:text-base text-sm font-medium focus:font-bold"
 										>Convencionais</span
 									>
 									<div id="elemento8" class="hidden w-full flex flex-col pb-2">
@@ -286,7 +286,7 @@
 													data-target="elemento10"
 													class="meuBotao3 py-2 relative cursor-pointer"
 												>
-													<span tabindex="0" class="font-light focus:font-bold"
+													<span tabindex="0" class="font-medium focus:font-bold"
 														>Minimalistas</span
 													>
 													<div
@@ -323,7 +323,7 @@
 													data-target="elemento11"
 													class="meuBotao3 relative cursor-pointer"
 												>
-													<span tabindex="0" class="font-light focus:font-bold"
+													<span tabindex="0" class="font-medium focus:font-bold"
 														>Convencionais</span
 													>
 													<div
@@ -485,9 +485,6 @@
 								width="400"
 								height="192"
 							/>
-							<span class="hover-text md:hidden block font-normal"
-								>clique na foto para ampliar</span
-							>
 						</div>
 						<div
 							on="tap:AMP.setState({ option: 1, slide1: 1, slideIndex: 1 })"
@@ -498,9 +495,6 @@
 								width="400"
 								height="192"
 							/>
-							<span class="hover-text md:hidden block font-normal"
-								>clique na foto para ampliar</span
-							>
 						</div>
 						<div
 							on="tap:AMP.setState({ option: 1, slide1: 1, slideIndex: 2 })"
@@ -511,9 +505,6 @@
 								width="400"
 								height="192"
 							/>
-							<span class="hover-text md:hidden block font-normal"
-								>clique na foto para ampliar</span
-							>
 						</div>
 					</div>
 					<div class="flex lg:flex-row flex-col items-center gap-3">
@@ -526,9 +517,6 @@
 								width="400"
 								height="192"
 							/>
-							<span class="hover-text md:hidden block font-normal"
-								>clique na foto para ampliar</span
-							>
 						</div>
 						<div
 							on="tap:AMP.setState({ option: 1, slide1: 1, slideIndex: 4 })"
@@ -539,9 +527,6 @@
 								width="400"
 								height="192"
 							/>
-							<span class="hover-text md:hidden block font-normal"
-								>clique na foto para ampliar</span
-							>
 						</div>
 						<div
 							on="tap:AMP.setState({ option: 1, slide1: 1, slideIndex: 5 })"
@@ -552,15 +537,12 @@
 								width="400"
 								height="192"
 							/>
-							<span class="hover-text md:hidden block font-normal"
-								>clique na foto para ampliar</span
-							>
 						</div>
 					</div>
 				</div>
 			</div>
 			<!-- Texto -->
-			<div class="flex md:flex-row flex-col gap-4 md:text-start text-center">
+			<div class="flex md:flex-row flex-col gap-4 text-start">
 				<div class="flex flex-col gap-4 md:max-w-[50%]">
 					<span class="font-bold text-xl"
 						>Atende a projetos minimalistas para grandes vãos, com média de
@@ -728,9 +710,9 @@
 	})
 </script>
 
-  <footer [hidden]="option != 2" class="w-full h-screen rodape-image">
+  <footer [hidden]="option != 2" class="w-full md:h-screen h-auto rodape-image">
   <div class="bg-[#000]/80 h-full w-full xl:px-24 px-4 xl:py-36 py-4">
-    <div class="w-full flex flex-col md:justify-between justify-end h-full md:items-start items-center md:text-start text-center">
+    <div class="w-full flex flex-col md:justify-between justify-end h-full md:items-start items-center text-start">
       <!-- <div id="logo" class="md:invisible visible logo-white bg-cover w-[200px] h-24 md:mb-0 mb-24"></div> -->
       <div class="flex md:flex-row flex-col gap-16 justify-between w-full">
         <div>
