@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html amp lang="pt-br">
+
+<head>
+  {% include "seo.njk" %}
+  <script type="application/ld+json">
+			{
+				"@context": "http://schema.org",
+				"@type": "WebSite",
+				"name": "Cast Móveis Select",
+				"url": "https://castmoveis.com.br/select",
+				"description": "A Cast Móveis Planejados e Decorações é especialista em transformar ambientes com soluções personalizadas e de alto padrão. Oferecemos móveis planejados e projetos de decoração que aliam funcionalidade, elegância e inovação.",
+				"inLanguage": "pt-BR"
+			}
+		</script>
+  <!-- AMP -->
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-base-carousel"
+    src="https://cdn.ampproject.org/v0/amp-base-carousel-0.1.js"></script>
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen" />
+  {% include "ampStyles.njk" %}
+</head>
+
+<body>
+  {{ content | safe }}
+  {% include "footer.njk" %}
+  <div class="relative">
+    <a href="https://api.whatsapp.com/send?phone=5511995994243&text=Ol%C3%A1!%20Vi%20seu%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+      class="dd-m-whatsapp" target="_blank"><span class="icon"></span></a>
+  </div>
+  <!-- Carregue o JS após o HTML -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script defer src="/js/scripts.js"></script>
+</body>
+
+</html>

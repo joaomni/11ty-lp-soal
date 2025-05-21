@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html amp lang="pt-br">
+
+<head>
+  <title>Leads</title>
+<meta name="title" content="Cast Móveis Select" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=edge,chrome=1">
+<meta
+  name="keywords"
+  content="moveis planejados, moveis sob medida, moveis novos, moveis personalizados, moveis e decoração"/>
+<meta name="description" content="A Cast Móveis Planejados e Decorações é especialista em transformar ambientes com soluções personalizadas e de alto padrão. Oferecemos móveis planejados e projetos de decoração que aliam funcionalidade, elegância e inovação."/>
+<link rel="icon" type="image/ico" href="/images/favicon.ico">
+<link rel="apple-touch-icon" href="/images/favicon.ico">
+<link rel="shortcut icon" href="/images/favicon.ico">
+<meta name="robots" content="all" />
+<meta name="googlebot" content="index, follow">
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cast Móveis Select" />
+<meta property="og:description" content="A Cast Móveis Planejados e Decorações é especialista em transformar ambientes com soluções personalizadas e de alto padrão. Oferecemos móveis planejados e projetos de decoração que aliam funcionalidade, elegância e inovação." />
+<meta property="og:url" content="https://castmoveis.com.br/select" />
+<meta property="og:site_name" content="Cast Móveis Select" />
+<meta property="website:modified_time" content="2024-09-24T12:50:53+00:00" />
+<meta property="og:image" content="/images/favicon.png" />
+<meta property="og:image:secure_url" content="/images/favicon.png">
+<meta property="og:image:width" content="480" />
+<meta property="og:image:height" content="360" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://castmoveis.com.br/select">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="msapplication-starturl" content="/">
+  <script type="application/ld+json">
+			{
+				"@context": "http://schema.org",
+				"@type": "WebSite",
+				"name": "Cast Móveis Select",
+				"url": "https://castmoveis.com.br/select",
+				"description": "A Cast Móveis Planejados e Decorações é especialista em transformar ambientes com soluções personalizadas e de alto padrão. Oferecemos móveis planejados e projetos de decoração que aliam funcionalidade, elegância e inovação.",
+				"inLanguage": "pt-BR"
+			}
+		</script>
+  <!-- AMP -->
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-base-carousel"
+    src="https://cdn.ampproject.org/v0/amp-base-carousel-0.1.js"></script>
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen" />
+  <style amp-boilerplate>
+  body {
+    -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    animation: -amp-start 8s steps(1, end) 0s 1 normal both
+  }
+
+  @-webkit-keyframes -amp-start {
+    from {
+      visibility: hidden
+    }
+
+    to {
+      visibility: visible
+    }
+  }
+
+  @-moz-keyframes -amp-start {
+    from {
+      visibility: hidden
+    }
+
+    to {
+      visibility: visible
+    }
+  }
+
+  @-ms-keyframes -amp-start {
+    from {
+      visibility: hidden
+    }
+
+    to {
+      visibility: visible
+    }
+  }
+
+  @-o-keyframes -amp-start {
+    from {
+      visibility: hidden
+    }
+
+    to {
+      visibility: visible
+    }
+  }
+
+  @keyframes -amp-start {
+    from {
+      visibility: hidden
+    }
+
+    to {
+      visibility: visible
+    }
+  }
+</style>
+<noscript>
+  <style amp-boilerplate>
+    body {
+      -webkit-animation: none;
+      -moz-animation: none;
+      -ms-animation: none;
+      animation: none
+    }
+  </style>
+</noscript>
+</head>
+
+<body>
+  
+<div class="container mx-auto p-6">
+  <h1 class="text-2xl font-bold text-center mb-6">Lista de Leads</h1>
+
+  <div class="overflow-x-auto bg-white p-4 rounded-lg shadow-lg">
+    <table class="w-full border-collapse">
+      <thead>
+        <tr class="bg-gray-200 text-left">
+          <th class="p-3 border">ID</th>
+          <th class="p-3 border">Nome</th>
+          <th class="p-3 border">Email</th>
+          <th class="p-3 border">Celular</th>
+          <th class="p-3 border">Setor</th>
+          <th class="p-3 border">Mensagem</th>
+          <th class="p-3 border">Data</th>
+        </tr>
+      </thead>
+      <tbody id="leadsTable">
+        <!-- Os dados serão inseridos aqui via JS -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  async function carregarLeads() {
+    try {
+      const resposta = await fetch("https://node-api-contatos.onrender.com/contatos");
+      const leads = await resposta.json();
+
+      const tabela = document.getElementById("leadsTable");
+      tabela.innerHTML = "";
+
+      leads.forEach(lead => {
+        const linha = `
+                  <tr class="border-b hover:bg-gray-100">
+                      <td class="p-3 border">${lead.id}</td>
+                      <td class="p-3 border">${lead.nome}</td>
+                      <td class="p-3 border">${lead.email}</td>
+                      <td class="p-3 border">${lead.celular}</td>
+                      <td class="p-3 border">${lead.setor}</td>
+                      <td class="p-3 border">${lead.mensagem}</td>
+                      <td class="p-3 border">${new Date(lead.data_envio).toLocaleString()}</td>
+                  </tr>
+              `;
+        tabela.innerHTML += linha;
+      });
+    } catch (error) {
+      console.error("Erro ao carregar leads:", error);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", carregarLeads);
+</script>
+  <footer [hidden]="option != 2" class="w-full h-screen rodape-image">
+  <div class="bg-[#000]/80 h-full w-full xl:px-24 px-4 xl:py-36 py-4">
+    <div class="w-full flex flex-col md:justify-between justify-end h-full md:items-start items-center md:text-start text-center">
+      <!-- <div id="logo" class="md:invisible visible logo-white bg-cover w-[200px] h-24 md:mb-0 mb-24"></div> -->
+      <div class="flex md:flex-row flex-col gap-16 justify-between w-full">
+        <div>
+          <span class="md:text-base text-xs">Desde 1996, a Soal é referência em esquadrias de<br />
+            alumínio para o segmento residencial de alto padrão.<br />
+            Rua Horandates Barba, 701 - Jd. Ana Cláudia<br />
+            Votorantim - SP - CEP 18.112-540</span>
+        </div>
+        <div class="flex flex-col md:gap-4 gap-16 md:text-2xl">
+          <span>ENTRE EM CONTATO</span>
+          <span>11 99599 4243<br />
+            soal@soal.com.br</span>
+        </div>
+      </div>
+      <div class="mt-8"><span class="md:text-base text-xs">SOAL (C) 2025 TODOS OS DIREITOS RESERVADOS</span></div>
+    </div>
+  </div>
+</footer>
+  <div class="relative">
+    <a href="https://api.whatsapp.com/send?phone=5511995994243&text=Ol%C3%A1!%20Vi%20seu%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+      class="dd-m-whatsapp" target="_blank"><span class="icon"></span></a>
+  </div>
+  <!-- Carregue o JS após o HTML -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script defer src="/js/scripts.js"></script>
+</body>
+
+</html>

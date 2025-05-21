@@ -1,0 +1,58 @@
+---
+title: 'Leads'
+layout: layout.njk
+---
+
+<div class="container mx-auto p-6">
+  <h1 class="text-2xl font-bold text-center mb-6">Lista de Leads</h1>
+
+  <div class="overflow-x-auto bg-white p-4 rounded-lg shadow-lg">
+    <table class="w-full border-collapse">
+      <thead>
+        <tr class="bg-gray-200 text-left">
+          <th class="p-3 border">ID</th>
+          <th class="p-3 border">Nome</th>
+          <th class="p-3 border">Email</th>
+          <th class="p-3 border">Celular</th>
+          <th class="p-3 border">Setor</th>
+          <th class="p-3 border">Mensagem</th>
+          <th class="p-3 border">Data</th>
+        </tr>
+      </thead>
+      <tbody id="leadsTable">
+        <!-- Os dados serão inseridos aqui via JS -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  async function carregarLeads() {
+    try {
+      const resposta = await fetch("https://node-api-contatos.onrender.com/contatos");
+      const leads = await resposta.json();
+
+      const tabela = document.getElementById("leadsTable");
+      tabela.innerHTML = "";
+
+      leads.forEach(lead => {
+        const linha = `
+                  <tr class="border-b hover:bg-gray-100">
+                      <td class="p-3 border">${lead.id}</td>
+                      <td class="p-3 border">${lead.nome}</td>
+                      <td class="p-3 border">${lead.email}</td>
+                      <td class="p-3 border">${lead.celular}</td>
+                      <td class="p-3 border">${lead.setor}</td>
+                      <td class="p-3 border">${lead.mensagem}</td>
+                      <td class="p-3 border">${new Date(lead.data_envio).toLocaleString()}</td>
+                  </tr>
+              `;
+        tabela.innerHTML += linha;
+      });
+    } catch (error) {
+      console.error("Erro ao carregar leads:", error);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", carregarLeads);
+</script>

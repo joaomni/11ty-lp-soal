@@ -1,0 +1,23 @@
+<div id="meuSlide" hidden [hidden]="option != 1" class="w-screen h-screen absolute bg-black">
+  <div
+    class="cursor-pointer text-2xl absolute z-[9999999] top-[20px] right-[25px] p-2 rounded bg-[#8F968D]/45 hover:bg-[#8F968D]"
+    on="tap:AMP.setState({ slide1: 2, option: 2 })">
+    <span>X</span>
+  </div>
+  <div class="flex justify-center items-center w-full h-screen">
+    <amp-base-carousel
+      loop
+      width="1200"
+      height="700"
+      visible-count="(min-width: 800px) 1, 1"
+      advance-count="(min-width: 800px) 1, 1"
+      [slide]="slideIndex">
+      <amp-img layout="flex-item" src="/images/projetos/1.png"></amp-img>
+      <amp-img layout="flex-item" src="/images/projetos/2.png"></amp-img>
+      <amp-img layout="flex-item" src="/images/projetos/3.png"></amp-img>
+      <amp-img layout="flex-item" src="/images/projetos/4.png"></amp-img>
+      <amp-img layout="flex-item" src="/images/projetos/5.png"></amp-img>
+      <amp-img layout="flex-item" src="/images/projetos/6.png"></amp-img>
+    </amp-base-carousel>
+  </div>
+</div>
